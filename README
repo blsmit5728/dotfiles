@@ -1,0 +1,10 @@
+********** This Will server for the Moment ***********
+This is my dotfiles....
+They are what they are becuase I made them this way.
+If you don't like it. I don't care.
+They work for what I want them to do.
+
+git clone git://github.com/blsmit5728/dotfiles ~/dotfiles
+cd ~/dotfiles
+./install.sh
+

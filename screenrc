@@ -1,0 +1,5 @@
+#My screen keybindings file.
+bind ' ' windowlist -b
+
+
+
