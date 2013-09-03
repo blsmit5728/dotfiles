@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+P=`pwd`
+source ${P}/.colors
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -103,28 +106,21 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-ps -ef | grep dropbox-dist | grep "maybe" 
-if [ $? -eq "1" ] 
-then 
-    START=`dropbox status`
-    if [ "$START" == "Idle" ]
-    then
-        echo "Dropbox is running"
-    else
-        dropbox start
-    fi
-fi
+#ps -ef | grep dropbox-dist | grep "maybe" 
+#if [ $? -eq "1" ] 
+#then 
+#    START=`dropbox status`
+#    if [ "$START" == "Idle" ]
+#    then
+#        echo "Dropbox is running"
+#    else
+#        dropbox start
+#    fi
+#fi
 
-export PATH=/home/bsmith/Scripts/flexget:$PATH
-# We always want the loopback interface.
 alias flexor='cd /proj/accts/picoflexor/'
 
+export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
+stty ixany
+stty ixoff -ixon

@@ -8,7 +8,7 @@
 
 dir=`pwd`                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc screenrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc screenrc colors"    # list of files/folders to symlink in homedir
 
 ##########
 if [ -n $1 ]
