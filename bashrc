@@ -116,15 +116,10 @@ then
 fi
 
 export PATH=/home/bsmith/Scripts/flexget:$PATH
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
+
+alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
+alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
+alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
 
 
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
+
