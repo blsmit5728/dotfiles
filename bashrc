@@ -118,7 +118,6 @@ fi
 #    fi
 #fi
 
-<<<<<<< HEAD
 export PATH=/home/bsmith/Scripts/flexget:$PATH
 
 alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
@@ -128,10 +127,9 @@ alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c
 
 
 =======
-alias flexor='cd /proj/accts/picoflexor/'
+#alias flexor='cd /proj/accts/picoflexor/'
 
 export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
 stty ixany
 stty ixoff -ixon
->>>>>>> 1bfd99210d8bfbb2188f7322b8c7eede1b599795
