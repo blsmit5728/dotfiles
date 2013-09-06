@@ -40,4 +40,4 @@ HI_BG_PURPLE="\[\033[10;95m\]" # Purple
 HI_BG_CYAN="\[\033[0;106m\]" # Cyan
 HI_BG_WHITE="\[\033[0;107m\]" # White
 
-
+OFF_COLOR="\[\033[0m\]"

@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+P=`pwd`
+source ${P}/.colors
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -103,18 +106,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-ps -ef | grep dropbox-dist | grep "maybe" 
-if [ $? -eq "1" ] 
-then 
-    START=`dropbox status`
-    if [ "$START" == "Idle" ]
-    then
-        echo "Dropbox is running"
-    else
-        dropbox start
-    fi
-fi
+#ps -ef | grep dropbox-dist | grep "maybe" 
+#if [ $? -eq "1" ] 
+#then 
+#    START=`dropbox status`
+#    if [ "$START" == "Idle" ]
+#    then
+#        echo "Dropbox is running"
+#    else
+#        dropbox start
+#    fi
+#fi
 
+<<<<<<< HEAD
 export PATH=/home/bsmith/Scripts/flexget:$PATH
 
 alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
@@ -123,3 +127,11 @@ alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c
 
 
 
+=======
+alias flexor='cd /proj/accts/picoflexor/'
+
+export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
+
+stty ixany
+stty ixoff -ixon
+>>>>>>> 1bfd99210d8bfbb2188f7322b8c7eede1b599795
