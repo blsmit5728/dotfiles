@@ -126,7 +126,6 @@ alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c
 
 
 
-=======
 #alias flexor='cd /proj/accts/picoflexor/'
 
 export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "

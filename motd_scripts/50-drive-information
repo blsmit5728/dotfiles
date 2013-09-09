@@ -1,0 +1,20 @@
+#!/bin/sh
+
+red='\e[0;31m'
+green='\e[0;32m'
+NC='\e[0m' # No Color
+
+echo " "
+CAP=`df -h | grep /dev/sdb | cut -d'%' -f1 | cut -d' ' -f8`
+USE=`df -h | grep /dev/sdb | cut -d'%' -f1 | cut -d' ' -f10`
+
+echo "The Media Drive /dev/sdb/ is using $USE of $CAP"
+echo " "
+DF=`df -h | grep /dev/sdb | cut -d'%' -f1 | cut -d' ' -f14`
+if [ "$DF" -gt "90" ]
+then
+    echo -e "The Media Drive /dev/sdb/ is at ${red}$DF%${NC} Full\n"
+else
+    echo -e "The Media Drive /dev/sdb/ is at ${green}$DF%${NC} Full\n"
+fi
+
