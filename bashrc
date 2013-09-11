@@ -106,24 +106,26 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#ps -ef | grep dropbox-dist | grep "maybe" 
-#if [ $? -eq "1" ] 
-#then 
-#    START=`dropbox status`
-#    if [ "$START" == "Idle" ]
-#    then
-#        echo "Dropbox is running"
-#    else
-#        dropbox start
-#    fi
-#fi
+if [ "$WORK" -eq "0" ]
+then
+	ps -ef | grep dropbox-dist | grep "maybe" 
+	if [ $? -eq "1" ] 
+	then 
+    		START=`dropbox status`
+    		if [ "$START" == "Idle" ]
+    		then
+        		echo "Dropbox is running"
+    		else
+        		dropbox start
+    		fi
+	fi
+else
+	export PATH=/home/bsmith/Scripts/flexget:$PATH
 
-export PATH=/home/bsmith/Scripts/flexget:$PATH
-
-alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
-alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
-alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
-
+	alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
+	alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
+	alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
+fi
 
 
 #alias flexor='cd /proj/accts/picoflexor/'
