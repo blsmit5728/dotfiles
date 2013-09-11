@@ -119,12 +119,19 @@ then
         		dropbox start
     		fi
 	fi
-else
 	export PATH=/home/bsmith/Scripts/flexget:$PATH
 
 	alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
 	alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
 	alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
+else
+    alias build_api='cd /proj/accts/picoflexor/bsmith/master_trunk/Iveia_API_lib/2_19_4/ && export BOARD=atlas-i-lpe && make lpe && make install && cd -'
+    alias quick='make clean && make 2>&1 | tee make.log && grep --color=auto "warning\|error" make.log'
+    #alias qu='make clean && make 2>&1 | tee make.log && cat make.log | grep --color=auto '"'"'warning\|error'"'"
+    alias api_doxy_debug='cmake ../ -DCMAKE_BUILD_TYPE=DEBUG -DDOXYGEN_LATEX=YES'
+    alias api_doxy='cmake ../ -DDOXYGEN_LATEX=YES'
+    alias api_build='cmake ../'
+    export PATH=$PATH:"/opt/microchip/xc32/v1.21/bin"
 fi
 
 
