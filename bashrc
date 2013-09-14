@@ -5,6 +5,8 @@
 P=`pwd`
 source ${P}/.colors
 
+#WORK=0
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -124,6 +126,7 @@ then
 	alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
 	alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
 	alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
+    alias sync_files='rsync -rv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
 else
     alias build_api='cd /proj/accts/picoflexor/bsmith/master_trunk/Iveia_API_lib/2_19_4/ && export BOARD=atlas-i-lpe && make lpe && make install && cd -'
     alias quick='make clean && make 2>&1 | tee make.log && grep --color=auto "warning\|error" make.log'
@@ -141,3 +144,6 @@ export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${P
 
 stty ixany
 stty ixoff -ixon
+
+
+
