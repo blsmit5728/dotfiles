@@ -110,37 +110,41 @@ fi
 
 if [ "$WORK" -eq "0" ]
 then
-	ps -ef | grep dropbox-dist | grep "maybe" 
-	if [ $? -eq "1" ] 
-	then 
-    		START=`dropbox status`
-    		if [ "$START" == "Idle" ]
-    		then
-        		echo "Dropbox is running"
-    		else
-        		dropbox start
-    		fi
-	fi
-	export PATH=/home/bsmith/Scripts/flexget:$PATH
-
-	alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
-	alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
-	alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
+    ps -ef | grep dropbox-dist | grep "maybe" 
+    if [ $? -eq "1" ] 
+    then 
+        START=`dropbox status`
+        if [ "$START" == "Idle" ]
+        then
+	    echo "Dropbox is running"
+        else
+	    dropbox start
+        fi
+    fi
+    export PATH=/home/bsmith/Scripts/flexget:$PATH
+    alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
+    alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
+    alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
     alias sync_files='rsync -arv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
     alias clean_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.cleanlibrary(video)"'
     alias update_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.updatelibrary(video)"'
 else
-    alias build_api='cd /proj/accts/picoflexor/bsmith/master_trunk/Iveia_API_lib/2_19_4/ && export BOARD=atlas-i-lpe && make lpe && make install && cd -'
-    alias quick='make clean && make 2>&1 | tee make.log && grep --color=auto "warning\|error" make.log'
-    #alias qu='make clean && make 2>&1 | tee make.log && cat make.log | grep --color=auto '"'"'warning\|error'"'"
-    alias api_doxy_debug='cmake ../ -DCMAKE_BUILD_TYPE=DEBUG -DDOXYGEN_LATEX=YES'
-    alias api_doxy='cmake ../ -DDOXYGEN_LATEX=YES'
-    alias api_build='cmake ../'
-    export PATH=$PATH:"/opt/microchip/xc32/v1.21/bin"
+    alias iv_api_build='cd /proj/accts/picoflexor/bsmith/master_trunk/Iveia_API_lib/2_19_4/ && export BOARD=atlas-i-lpe && make lpe && make install && cd -'
+    alias mainapp_quick='make clean && make 2>&1 | tee make.log && grep --color=auto "warning\|error" make.log'
+    alias pf_api_doxy_debug='cmake ../ -DCMAKE_BUILD_TYPE=DEBUG -DDOXYGEN_LATEX=YES'
+    alias pf_api_doxy='cmake ../ -DDOXYGEN_LATEX=YES'
+    alias pf_api_build='cmake ../'
+    if [ -d /opt/microchip/ ]
+    then 
+        export PATH=$PATH:"/opt/microchip/xc32/v1.21/bin:/opt/microchip/mplabx/mplab_ide/bin/"
+    fi
+    if [ -d /proj/frell_svn_backup/ ]
+    then
+        # this means that FRACK is mounted...lets alias a couple things.
+        alias frack='/proj/accts/'
+        alias si9150='/proj/accts/si9150/'
+    fi
 fi
-
-
-#alias flexor='cd /proj/accts/picoflexor/'
 
 export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
