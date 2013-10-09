@@ -11,15 +11,22 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc screenrc colors"    # list of files/folders to symlink in homedir
 
 ##########
-if [ -n $1 ]
+if [ $# -eq 0 ]
 then
-    echo "Work"
-cat >> bashrc << EOF
-# We always want the loopback interface.
-alias flexor='cd /proj/accts/picoflexor/'
-EOF
+    echo "No Command Line Args Provided"
+    echo "usage: ./install.sh <0 | 1>"
+    echo " 0  : home use"
+    echo " 1  : work use"
+    exit
 else
-    echo "Home"
+    if [ "$1" -eq "1" ]
+    then
+        echo "Work use selected, bashrc is being updated!!"
+        sed -i 's/WORK=0/WORK=1/g' bashrc
+    elif [ "$1" -eq "0" ]
+    then
+        echo "Home Use selected, bashrc was not updated."
+    fi
 fi
 
 function ubuntu {
