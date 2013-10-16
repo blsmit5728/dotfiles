@@ -110,8 +110,7 @@ fi
 
 if [ "$WORK" -eq "0" ]
 then
-    ps -ef | grep dropbox-dist | grep "maybe" 
-    if [ $? -eq "1" ] 
+    if [ -f /usr/bin/dropbox ]
     then 
         START=`dropbox status`
         if [ "$START" == "Idle" ]
