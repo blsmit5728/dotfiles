@@ -127,6 +127,7 @@ then
     alias sync_files='rsync -arv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
     alias clean_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.cleanlibrary(video)"'
     alias update_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.updatelibrary(video)"'
+    alias directory_sort='du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh'
 else
     alias iv_api_build='cd /proj/accts/picoflexor/bsmith/master_trunk/Iveia_API_lib/2_19_4/ && export BOARD=atlas-i-lpe && make lpe && make install && cd -'
     alias mainapp_quick='make clean && make 2>&1 | tee make.log && grep --color=auto "warning\|error" make.log'
