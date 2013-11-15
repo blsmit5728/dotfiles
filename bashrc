@@ -5,7 +5,7 @@
 P=`pwd`
 source ${HOME}/.colors
 
-WORK=0
+WORK=1
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -136,13 +136,13 @@ else
     alias pf_api_build='cmake ../'
     if [ -d /opt/microchip/ ]
     then 
-        export PATH=$PATH:"/opt/microchip/xc32/v1.21/bin:/opt/microchip/mplabx/mplab_ide/bin/"
+        export PATH=$PATH:"/opt/microchip/xc32/v1.30/bin:/opt/microchip/mplabx/mplab_ide/bin/"
     fi
     if [ -d /proj/frell_svn_backup/ ]
     then
         # this means that FRACK is mounted...lets alias a couple things.
-        alias frack='/proj/accts/'
-        alias si9150='/proj/accts/si9150/'
+        alias frack='cd /proj/accts/'
+        alias si9150='cd /proj/accts/si9150/'
     fi
 fi
 
@@ -153,3 +153,5 @@ stty ixoff -ixon
 
 
 
+
+export PATH=$PATH:"/opt/microchip/xc32/v1.30/bin"
