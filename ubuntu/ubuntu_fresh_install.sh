@@ -4,14 +4,17 @@ function setup_ubuntu {
 	PACKAGES="git vim"
 	REPOS="repos"
 
+    MY_DIR=`dirname $0`
+
 	sudo apt-get -y install "$PACKAGES"
-	echo $"y\r"
-	ssh-keygen
-	echo $"\r"
-	echo $"\r"
-	echo $"\r"
-	sudo apt-get install python-software-properties pkg-config
-	sudo apt-get install software-properties-common
+	if [ -d ~/.ssh ]
+    then
+        echo "SSH Already Created"
+    else
+        ssh-keygen
+    fi
+	sudo apt-get -y install python-software-properties pkg-config
+	sudo apt-get -y install software-properties-common
 
 	UBUNTU_BUILD=`cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d'=' -f2`
 
@@ -33,8 +36,8 @@ function setup_ubuntu {
 	sudo apt-get update
 	sudo apt-get -y install xbmc xbmc-bin
 	sudo apt-get -y install deluge deluge-web deluged
-	sudo cp deluge_default_script /etc/default/deluge-daemon
-	sudo cp deluge_init_d_script /etc/init.d/deluge-daemon
+	sudo cp $MY_DIR/deluge/deluge_default_script /etc/default/deluge-daemon
+	sudo cp $MY_DIR/deluge/deluge_init_d_script /etc/init.d/deluge-daemon
 	sudo chmod 755 /etc/init.d/deluge-daemon
 	sudo update-rc.d deluge-daemon defaults
 	sudo invoke-rc.d deluge-daemon start

@@ -14,7 +14,6 @@ MY_DIR=`dirname $0`
 
 source $MY_DIR/ubuntu/ubuntu_fresh_install.sh
 
-exit
 
 function ubuntu {
 	# create dotfiles_old in homedir
@@ -50,7 +49,12 @@ then
 else 
 	# this is something else usually Ubuntu
     ubuntu
-	setup_ubuntu
+    if [ -d ~/.flexget ]
+    then
+        echo "Already setup for flexget"
+    else
+       	setup_ubuntu
+    fi
 fi
 
 
