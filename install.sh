@@ -54,6 +54,8 @@ else
         echo "Already setup for flexget"
     else
        	setup_ubuntu
+		echo "please visit: http://wiki.xbmc.org/index.php?title=HOW-TO:Sync_multiple_libraries/Setting_up_MySQL"
+		echo "To finish up installation of the MYSQL"
     fi
 fi
 
