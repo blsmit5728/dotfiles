@@ -6,28 +6,15 @@
 
 ########## Variables
 
-dir=`pwd`                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc screenrc colors"    # list of files/folders to symlink in homedir
+dir=`pwd`                    
+olddir=~/dotfiles_old 
+files="bashrc vimrc screenrc colors" 
 
-##########
-if [ $# -eq 0 ]
-then
-    echo "No Command Line Args Provided"
-    echo "usage: ./install.sh <0 | 1>"
-    echo " 0  : home use"
-    echo " 1  : work use"
-    exit
-else
-    if [ "$1" -eq "1" ]
-    then
-        echo "Work use selected, bashrc is being updated!!"
-        sed -i 's/WORK=0/WORK=1/g' bashrc
-    elif [ "$1" -eq "0" ]
-    then
-        echo "Home Use selected, bashrc was not updated."
-    fi
-fi
+MY_DIR=`dirname $0`
+
+source $MY_DIR/ubuntu/ubuntu_fresh_install.sh
+
+exit
 
 function ubuntu {
 	# create dotfiles_old in homedir
@@ -55,14 +42,15 @@ function osx {
 
 # Grep to see if we are on OSX or something else
 
-uname -a | grep Darwin --color=auto >> /dev/null 
+uname -a | grep Darwin >> /dev/null 
 if [ $? -eq "0" ]
 then 
 	# This is an OSX machine
     osx
 else 
-	# this is something else, not OSX
+	# this is something else usually Ubuntu
     ubuntu
+	setup_ubuntu
 fi
 
 
