@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function setup_ubuntu {
-	PACKAGES="git vim"
+	PACKAGES="git vim subversion screen tree"
 	REPOS="repos"
 
     MY_DIR=`dirname $0`
