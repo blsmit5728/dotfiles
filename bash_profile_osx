@@ -55,10 +55,12 @@ OFF_COLOR="\[\033[0m\]"
 #Replace any leading 0; with 4; to underline
 
 #setup a better prompt
-export PS1="${GREEN}\u${OFF_COLOR}${WHITE}@${OFF_COLOR}${CYAN}\H${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
+export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\H${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
 #setup some alias'
 alias flexget_sort_movies='flexget --logfile /Users/bsmith/.flexget/flexget-sorting.log --debug -c /Users/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
 alias flexget_sort_tv='flexget --logfile /Users/bsmith/.flexget/flexget-sorting.log --debug -c /Users/bsmith/.flexget/sort.yml --task Sort_Unpacked_TvShows'
 alias ls='ls -G'
+alias ll='ls -l'
+
 
