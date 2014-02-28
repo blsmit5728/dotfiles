@@ -4,6 +4,11 @@ function setup_ubuntu {
 	PACKAGES="git vim subversion screen tree"
 	REPOS="repos"
 
+    ARCH=`uname -m`
+    X86_64="x86_64"
+    X86="x86"
+    ARM="armv7l"
+
     MY_DIR=`dirname $0`
 
 	sudo apt-get -y install "$PACKAGES"
@@ -16,22 +21,27 @@ function setup_ubuntu {
 	sudo apt-get -y install python-software-properties pkg-config
 	sudo apt-get -y install software-properties-common
 
-	UBUNTU_BUILD=`cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d'=' -f2`
+    # If this is an X86 machine, install XBMC the right way...
+    if [ "${ARCH}" -eq ${X86_64} ]
+    then
 
-	case "$UBUNTU_BUILD" in
-		"saucy")
-			echo "13.10"
-			sudo add-apt-repository  ppa:team-xbmc/xbmc-nightly
-			;;
-		"percise")
-			echo "12.04"
-			sudo add-apt-repository ppa:team-xbmc/ppa
-			;;
-		*)
-			echo "Version of Ubuntu unknown!!!"
-			exit
-			;;
-	esac
+	    UBUNTU_BUILD=`cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d'=' -f2`
+
+	    case "$UBUNTU_BUILD" in
+		    "saucy")
+			    echo "13.10"
+			    sudo add-apt-repository  ppa:team-xbmc/xbmc-nightly
+			    ;;
+		    "percise")
+			    echo "12.04"
+			    sudo add-apt-repository ppa:team-xbmc/ppa
+			    ;;
+		    *)
+			    echo "Version of Ubuntu unknown!!!"
+			    exit
+			    ;;
+	    esac
+    fi
 
 	sudo apt-get update
 	sudo apt-get -y install xbmc xbmc-bin
