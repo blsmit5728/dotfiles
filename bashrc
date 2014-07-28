@@ -107,21 +107,28 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-        START=`dropbox status`
-        if [ "$START" == "Idle" ]
-        then
+if [ -e /usr/bin/dropbox ]
+then
+    START=`dropbox status`
+    if [ "$START" == "Idle" ]
+    then
 	    echo "Dropbox is running"
-        else
-	    dropbox start
-        fi
-    #export PATH=/home/bsmith/Scripts/flexget:$PATH
-    alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
-    alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_TV_Shows --disable-advancement'
-    alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml --task Sort_Unpacked_Movies'
-    alias sync_files='rsync -arv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
-    alias clean_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.cleanlibrary(video)"'
-    alias update_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.updatelibrary(video)"'
-    alias directory_sort='du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh'
+    else
+       dropbox start
+    fi
+fi
+#export PATH=/home/bsmith/Scripts/flexget:$PATH
+alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
+alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml execute --task Sort_Unpacked_TV_Shows --disable-advancement'
+alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml execute --task Sort_Unpacked_Movies'
+#alias sync_files='rsync -arv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
+alias clean_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.cleanlibrary(video)"'
+alias update_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.updatelibrary(video)"'
+alias directory_sort='du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh'
+
+alias rm='rm -i'
+alias flex_forget='flexget series forget'
+alias flex_show='flexget series show'
 
 export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
