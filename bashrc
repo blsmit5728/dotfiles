@@ -110,13 +110,24 @@ fi
 if [ -e /usr/bin/dropbox ]
 then
     START=`dropbox status`
-    if [ "$START" == "Idle" ]
+    echo -ne "Checking Dropbox...."
+    if [ "$START" == "Up to date" ]
     then
-	    echo "Dropbox is running"
+	    echo -e "${GREEN}OK${OFF_COLOR}"
     else
+       echo -e "${RED}FAIL${OFF_COLOR}"
        dropbox start
     fi
 fi
+
+#ps aux | grep '[f]lexget daemon' >> /dev/null
+#if [ $? -eq "0" ]
+#then 
+#    echo "Flexget is Running"
+#else 
+#    echo "Flexget is NOT Running"
+#fi
+
 #export PATH=/home/bsmith/Scripts/flexget:$PATH
 alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
 alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml execute --task Sort_Unpacked_TV_Shows --disable-advancement'
