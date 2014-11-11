@@ -8,6 +8,8 @@ function setup_ubuntu {
     X86_64="x86_64"
     X86="x86"
     ARM="armv7l"
+    ARM_PI="armv6l"
+
 
     MY_DIR=`dirname $0`
 
@@ -41,16 +43,17 @@ function setup_ubuntu {
 			    exit
 			    ;;
 	    esac
-    fi
 
-	sudo apt-get update
-	sudo apt-get -y install xbmc xbmc-bin
-	sudo apt-get -y install deluge deluge-web deluged
-	sudo cp $MY_DIR/deluge/deluge_default_script /etc/default/deluge-daemon
-	sudo cp $MY_DIR/deluge/deluge_init_d_script /etc/init.d/deluge-daemon
-	sudo chmod 755 /etc/init.d/deluge-daemon
-	sudo update-rc.d deluge-daemon defaults
-	sudo invoke-rc.d deluge-daemon start
+	    sudo apt-get update
+        sudo apt-get -y install xbmc xbmc-bin
+	    sudo apt-get -y install deluge deluge-web deluged
+	    sudo cp $MY_DIR/deluge/deluge_default_script /etc/default/deluge-daemon
+	    sudo cp $MY_DIR/deluge/deluge_init_d_script /etc/init.d/deluge-daemon
+	    sudo chmod 755 /etc/init.d/deluge-daemon
+	    sudo update-rc.d deluge-daemon defaults
+	    sudo invoke-rc.d deluge-daemon start
+
+    fi
 
 	# Install Flexget
 	sudo apt-get -y install python-setuptools
