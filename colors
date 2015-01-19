@@ -1,43 +1,43 @@
 # Regular Colors
-BLACK='\e[0;30m' # Black
-RED='\e[0;31m' # Red
-GREEN='\e[0;32m' # Green
-YELLOW='\e[0;33m' # Yellow
-BLUE='\e[0;34m' # Blue
-PURPLE='\e[0;35m' # Purple
-CYAN='\e[0;36m' # Cyan
-WHITE='\e[0;37m' # White
+BLACK='\e0;30m' # Black
+RED='\e0;31m' # Red
+GREEN='\e0;32m' # Green
+YELLOW='\e0;33m' # Yellow
+BLUE='\e0;34m' # Blue
+PURPLE='\e0;35m' # Purple
+CYAN='\e0;36m' # Cyan
+WHITE='\e0;37m' # White
 
 # High Intensty
-HI_BLACK='\[\e[0;90m\]' # Black
-HI_RED='\[\e[0;91m\]' # Red
-HI_GREEN='\[\e[0;92m\]' # Green
-HI_YELLOW='\[\e[0;93m\]' # Yellow
-HI_BLUE='\[\e[0;94m\]' # Blue
-HI_PURPLE='\[\e[0;95m\]' # Purple
-HI_CYAN='\[\e[0;96m\]' # Cyan
-HI_WHITE='\[\e[0;97m\]' # White
+HI_BLACK='\e0;90m' # Black
+HI_RED='\e0;91m' # Red
+HI_GREEN='\e0;92m' # Green
+HI_YELLOW='\e0;93m' # Yellow
+HI_BLUE='\e0;94m' # Blue
+HI_PURPLE='\e0;95m' # Purple
+HI_CYAN='\e0;96m' # Cyan
+HI_WHITE='\e0;97m' # White
 
 
 
 # Background
-BG_BLACK='\[\e[40m\]' # Black
-BG_RED='\[\e[41m\]' # Red
-BG_GREEN='\[\e[42m\]' # Green
-BG_YELLOW='\[\e[43m\]' # Yellow
-BG_BLUE='\[\e[44m\]' # Blue
-BG_PURPLE='\[\e[45m\]' # Purple
-BG_CYAN='\[\e[46m\]' # Cyan
-BG_WHITE='\[\e[47m\]' # White
+BG_BLACK='\e40m' # Black
+BG_RED='\e41m' # Red
+BG_GREEN='\e42m' # Green
+BG_YELLOW='\e43m' # Yellow
+BG_BLUE='\e44m' # Blue
+BG_PURPLE='\e45m' # Purple
+BG_CYAN='\e46m' # Cyan
+BG_WHITE='\e47m' # White
 
 # High Intensty backgrounds
-HI_BG_BLACK='\[\e[0;100m\]' # Black
-HI_BG_RED='\[\e[0;101m\]' # Red
-HI_BG_GREEN='\[\e[0;102m\]' # Green
-HI_BG_YELLOW='\[\e[0;103m\]' # Yellow
-HI_BG_BLUE='\[\e[0;104m\]' # Blue
-HI_BG_PURPLE='\[\e[10;95m\]' # Purple
-HI_BG_CYAN='\[\e[0;106m\]' # Cyan
-HI_BG_WHITE='\[\e[0;107m\]' # White
+HI_BG_BLACK='\e0;100m' # Black
+HI_BG_RED='\e0;101m' # Red
+HI_BG_GREEN='\e0;102m' # Green
+HI_BG_YELLOW='\e0;103m' # Yellow
+HI_BG_BLUE='\e0;104m' # Blue
+HI_BG_PURPLE='\e10;95m' # Purple
+HI_BG_CYAN='\e0;106m' # Cyan
+HI_BG_WHITE='\e0;107m' # White
 
-OFF_COLOR='\e[0m'
+OFF_COLOR='\e0m'
