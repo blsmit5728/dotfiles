@@ -1,12 +1,12 @@
 # Regular Colors
-BLACK='\e0;30m' # Black
+BLACK='\[\e[0;30m\]' # Black
 RED='\e0;31m' # Red
-GREEN='\e0;32m' # Green
+GREEN='\[\e[0;32m\]' # Green
 YELLOW='\e0;33m' # Yellow
 BLUE='\e0;34m' # Blue
-PURPLE='\e0;35m' # Purple
-CYAN='\e0;36m' # Cyan
-WHITE='\e0;37m' # White
+PURPLE='\[\e[0;35m\]' # Purple
+CYAN='\[\e[0;36m\]' # Cyan
+WHITE='\[\e[0;37m\]' # White
 
 # High Intensty
 HI_BLACK='\e0;90m' # Black
@@ -40,4 +40,4 @@ HI_BG_PURPLE='\e10;95m' # Purple
 HI_BG_CYAN='\e0;106m' # Cyan
 HI_BG_WHITE='\e0;107m' # White
 
-OFF_COLOR='\e0m'
+OFF_COLOR='\[\e[0m\]'
