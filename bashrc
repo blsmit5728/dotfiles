@@ -141,6 +141,8 @@ alias rm='rm -i'
 alias flex_forget='flexget series forget'
 alias flex_show='flexget series show'
 
+alias plex_status='python /home/bsmith/repos/plex_status/get_plex_status.py'
+
 export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
 
 stty ixany
