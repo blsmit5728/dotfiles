@@ -3,3 +3,8 @@
 	name = Brandon Smith
 [push]
 	default = simple
+[alias]
+	co = checkout
+	ci = commit -v
+	pretty-log = log --graph --pretty=format:'%Cred%h%Creset%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	up = pull --rebase
