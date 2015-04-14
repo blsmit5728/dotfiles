@@ -113,37 +113,27 @@ then
     echo -ne "Checking Dropbox...."
     if [ "$START" == "Up to date" ]
     then
-	    echo -e "${GREEN}OK${OFF_COLOR}"
+	    echo -e "[\[$GREEN\]OK\[$OFF_COLOR\]]"
     else
-       echo -e "${RED}FAIL${OFF_COLOR}"
+       echo -e "[\[$RED\]FAIL\[$OFF_COLOR\]]"
        dropbox start
     fi
 fi
 
-#ps aux | grep '[f]lexget daemon' >> /dev/null
-#if [ $? -eq "0" ]
-#then 
-#    echo "Flexget is Running"
-#else 
-#    echo "Flexget is NOT Running"
-#fi
-
 #export PATH=/home/bsmith/Scripts/flexget:$PATH
-alias quit_xbmc='/usr/bin/xbmc-send --host=uranium.local --action="XBMC.Quit"'
 alias sort_unptv='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml execute --task Sort_Unpacked_TV_Shows --disable-advancement'
 alias sort_unpmo='flexget --logfile /home/bsmith/.flexget/flexget-sorting.log -c /home/bsmith/.flexget/sort.yml execute --task Sort_Unpacked_Movies'
 #alias sync_files='rsync -arv -update /mnt/disk1/Library/ /mnt/disk2/Library/'
-alias clean_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.cleanlibrary(video)"'
-alias update_xbmc='/usr/bin/xbmc-send --host=192.168.1.4 --action="XBMC.updatelibrary(video)"'
 alias directory_sort='du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh'
 
+# Alias rm so that I don't accidentally delet files...
 alias rm='rm -i'
 alias flex_forget='flexget series forget'
 alias flex_show='flexget series show'
 
 alias plex_status='python /home/bsmith/repos/plex_status/get_plex_status.py'
 
-export PS1="${GREEN}\u${OFF_COLOR}${CYAN}@${OFF_COLOR}${WHITE}\h${OFF_COLOR}:${PURPLE}\W${OFF_COLOR}# "
+export PS1="\[$GREEN\]\u\[$OFF_COLOR\]\[$CYAN\]@\[$OFF_COLOR\]\[$WHITE\]\h\[$OFF_COLOR\]:\[$PURPLE\]\W\[$OFF_COLOR\]# "
 
 stty ixany
 stty ixoff -ixon
