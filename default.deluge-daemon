@@ -1,0 +1,23 @@
+# Configuration for /etc/init.d/deluge-daemon
+# Goes in /etc/default/
+
+# The init.d script will only run if this variable non-empty.
+DELUGED_USER="deluge"
+
+# Should we run at startup?
+RUN_AT_STARTUP="YES"
+
+DAEMON_ENABLED[1]=0
+DAEMON_NAME[1]="deluged"
+DAEMON_PATH[1]="/usr/bin/deluged"
+DAEMON_ARGS[1]="-i 192.168.0.101 -d -L warning -l /var/log/deluge/daemon/warning.log -p 58846 -c /home/deluge/.config/deluge/"
+
+DAEMON_ENABLED[2]=0
+DAEMON_NAME[2]="deluged"
+DAEMON_PATH[2]="/usr/bin/deluged"
+DAEMON_ARGS[2]="-i 192.168.0.101 -d -L warning -l /var/log/deluge/daemon/warning-private.log -p 58847 -c /home/deluge/.config/deluge-private/"
+
+DAEMON_ENABLED[3]=0
+DAEMON_NAME[3]="deluge-web"
+DAEMON_PATH[3]="/usr/bin/deluge-web"
+DAEMON_ARGS[3]="-L warning -l /var/log/deluge/web/warning.log"

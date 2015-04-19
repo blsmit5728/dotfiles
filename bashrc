@@ -113,7 +113,7 @@ then
     echo -ne "Checking Dropbox...."
     if [ "$START" == "Up to date" ]
     then
-	    echo -e "[\[$GREEN\]OK\[$OFF_COLOR\]]"
+	    echo -e "[${GREEN}OK${OFF_COLOR}]"
     else
        echo -e "[\[$RED\]FAIL\[$OFF_COLOR\]]"
        dropbox start
