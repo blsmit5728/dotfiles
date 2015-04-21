@@ -8,7 +8,7 @@
 
 dir=`pwd`                    
 olddir=~/dotfiles_old 
-files="bashrc vimrc screenrc colors forward" 
+files="profile vimrc screenrc colors forward" 
 
 MY_DIR=`dirname $0`
 

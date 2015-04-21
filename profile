@@ -8,6 +8,24 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 source .colors
+
+log_msg() {
+    MSG="$1"
+    STATUS="$2"
+    G=$(tput setaf 2)
+    N=$(tput sgr0)
+    R=$(tput setaf 1)
+    if [ "$STATUS" == "OK" ]
+    then
+        STATUSCOLOR="[  ${G}${STATUS}${N}  ]"
+    else
+        STATUSCOLOR="[ ${R}${STATUS}${N} ]"
+    fi
+    let COL=$(tput cols)-${#MSG}+${#STATUSCOLOR}-${#STATUS}-6
+    echo -n $MSG
+    printf "%${COL}s\n"  "$STATUSCOLOR"
+}
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -39,12 +57,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -e /usr/bin/dropbox ]
 then
     START=`dropbox status`
-    echo -ne "Checking Dropbox...."
     if [ "$START" == "Up to date" ]
     then
-        echo -e "[${GREEN}OK${OFF_COLOR}]"
+        log_msg "Checking Dropbox" "OK"
     else
-        echo -e "[${RED}FAIL${NORMAL}]"
+        log_msg "Checking Dropbox" "FAIL"
         dropbox start
     fi
 fi
@@ -64,5 +81,5 @@ alias flex_show='flexget series show'
 
 alias plex_status='python /home/bsmith/repos/plex_status/get_plex_status.py'
 
-export PS1="\[$GREEN\]\u\[$OFF_COLOR\]\[$CYAN\]@\[$OFF_COLOR\]\[$WHITE\]\h\[$OFF_COLOR\]:\[$PURPLE\]\W\[$OFF_COLOR\]# "
+export PS1="${GREEN}\u${NORMAL}${CYAN}@${NORMAL}\h:${PURPLE}\W${NORMAL}# "
 #
