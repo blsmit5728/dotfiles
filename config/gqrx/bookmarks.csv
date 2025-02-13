@@ -1,0 +1,43 @@
+# Tag name          ;  color
+FRS                 ; #c0c0c0
+GMRS                ; #b41919
+
+# Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
+   462562500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462587500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462612500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462637500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462662500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462687500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462712500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467562500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467587500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467612500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467637500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467662500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467687500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   467712500; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462550000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462575000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462600000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462625000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462650000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462675000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462700000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462725000; FRS 01                   ; Narrow FM           ;      12500; FRS
+   462550000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462575000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462600000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462625000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462650000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462675000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462700000; GMRS 01                  ; FM                  ;      20000; GMRS
+   462725000; GMRS 01                  ; FM                  ;      20000; GMRS
+   467550000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467575000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467600000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467625000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467650000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467675000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467700000; GMRS 01                  ; FM                  ;      20000; GMRS	
+   467725000; GMRS 01                  ; FM                  ;      20000; GMRS	
